@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+pandoc\
+    --from markdown\
+    --table-of-contents\
+    --filter=`dirname $0`/autocomplete-caption\
+    --filter=`dirname $0`/include\
+    --latex-engine=lualatex\
+    --listings\
+    --no-tex-ligatures\
+    --template=`dirname $0`/luatex-style.sty\
+    --variable='documentclass:ltjarticle'\
+    --output=${1:r}.pdf\
+    $@
