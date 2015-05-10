@@ -3,12 +3,11 @@
 pandoc\
     --from markdown\
     --table-of-contents\
-    --filter=pandoc-autocomplete-caption\
     --filter=pandoc-include\
     --latex-engine=lualatex\
     --listings\
     --no-tex-ligatures\
-    --template=`dirname $0`/luatex-style.sty\
+    --template=`dirname $0`/../share/pppset/luatex-style.sty\
     --variable='documentclass:ltjarticle'\
     --output=${1:r}.pdf\
     $@
