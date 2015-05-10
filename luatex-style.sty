@@ -1,0 +1,70 @@
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$$else$a4paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+
+\usepackage{luatexja}
+
+\usepackage{luatexja-fontspec}
+\setmainfont[BoldFont=Ricty-Bold]{Ricty}
+\setmonofont[BoldFont=Ricty-Bold]{Ricty}
+\setsansfont[BoldFont=Ricty-Bold]{Ricty}
+\setmainjfont[BoldFont=Ricty-Bold]{Ricty}
+\setsansjfont[BoldFont=Ricty-Bold]{Ricty}
+
+\usepackage[top=10truemm, bottom=10truemm, left=20truemm, right=20truemm]{geometry}
+
+\usepackage{graphicx}
+\setkeys{Gin}{width=\textwidth, height=\textheight, keepaspectratio}
+
+\def\figureautorefname{図}
+\newcommand*{\fullref}[1]{\autoref{#1}: \nameref{#1}}
+
+\usepackage[unicode=true]{hyperref}
+\hypersetup{%
+  bookmarks=true,
+  breaklinks=true,
+  citecolor=Red,
+  colorlinks=true,
+  linkcolor=Blue,
+  pdfauthor={$author-meta$},
+  pdfborder={0 0 0},
+  pdftitle={$title-meta$},
+  urlcolor=Blue,
+}
+
+\usepackage[usenames, dvipsnames, svgnames, table]{xcolor}
+\usepackage{lltjp-listings}
+\lstset{%
+  basicstyle=\ttfamily,
+  breakindent=0pt,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{Gray},
+  frame=shadowbox,
+  keywordstyle=\color{Blue},
+  numbers=left,
+  numberstyle=\color{Gray},
+  rulecolor=\color{Black},
+  showstringspaces=false,
+  stringstyle=\color{DarkGreen},
+  tabsize=4,
+}
+
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{sidecap}
+\usepackage{titlesec}
+\usepackage{url}
+\usepackage{wrapfig}
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+\begin{document}
+
+\title{$title$}
+\author{$author$}
+\date{$date$}
+
+$body$
+
+\end{document}
