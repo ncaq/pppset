@@ -3,6 +3,7 @@
 pandoc\
     --from markdown\
     --table-of-contents\
+    --filter=pandoc-autocomplete-caption\
     --filter=pandoc-include\
     --latex-engine=lualatex\
     --listings\
