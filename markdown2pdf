@@ -3,8 +3,8 @@
 pandoc\
     --from markdown\
     --table-of-contents\
-    --filter=`dirname $0`/autocomplete-caption\
-    --filter=`dirname $0`/include\
+    --filter=pandoc-autocomplete-caption\
+    --filter=pandoc-include\
     --latex-engine=lualatex\
     --listings\
     --no-tex-ligatures\

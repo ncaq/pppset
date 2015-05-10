@@ -1,0 +1,6 @@
+[submodule "pandoc-include"]
+	path = pandoc-include
+	url = git@github.com:ncaq/pandoc-include.git
+[submodule "pandoc-autocomplete-caption"]
+	path = pandoc-autocomplete-caption
+	url = git@github.com:ncaq/pandoc-autocomplete-caption.git
