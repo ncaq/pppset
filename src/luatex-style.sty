@@ -57,16 +57,24 @@
 \usepackage{url}
 \usepackage{wrapfig}
 
-$for(include-before)$
-$include-before$
-$endfor$
-
-\begin{document}
-
 \title{$title$}
 \author{$author$}
 \date{$date$}
 
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\begin{document}
+
+$for(include-before)$
+$include-before$
+$endfor$
+
 $body$
+
+$for(include-after)$
+$include-after$
+$endfor$
 
 \end{document}
