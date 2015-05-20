@@ -11,8 +11,15 @@
 
 \usepackage[margin=15truemm]{geometry}
 
+\usepackage{titlesec}
+\titlespacing*{\section}{0\zw}{0.1\zh}{0.1\zh}
+\titlespacing*{\subsection}{1\zw}{0.1\zh}{0.1\zh}
+\titlespacing*{\subsubsection}{2\zw}{0.1\zh}{0.1\zh}
+
 \usepackage{graphicx}
 \setkeys{Gin}{width=\textwidth, height=\textheight, keepaspectratio}
+
+\setlength{\abovecaptionskip}{0truemm}
 
 \def\figureautorefname{図}
 \newcommand*{\fullref}[1]{\autoref{#1}: \nameref{#1}}
@@ -54,7 +61,6 @@
 \usepackage{indentfirst}
 \usepackage{longtable}
 \usepackage{sidecap}
-\usepackage{titlesec}
 \usepackage{url}
 \usepackage{wrapfig}
 
