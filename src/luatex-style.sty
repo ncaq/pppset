@@ -1,29 +1,27 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$$else$a4paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
-\usepackage{luatexja}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{calc}
+\usepackage{etoolbox}
+\usepackage{fancyvrb}
+\usepackage{float}
+\usepackage{ifplatform}
+\usepackage{ifthen}
+\usepackage{indentfirst}
+\usepackage{keyval}
+\usepackage{kvoptions}
+\usepackage{lineno}
+\usepackage{listing}
+\usepackage{longtable}
+\usepackage{pdftexcmds}
+\usepackage{sidecap}
+\usepackage{url}
+\usepackage{wrapfig}
+\usepackage{xstring}
 
-\usepackage{luatexja-fontspec}
-\setmainfont[BoldFont=Ricty-Bold]{Ricty}
-\setmonofont[BoldFont=Ricty-Bold]{Ricty}
-\setsansfont[BoldFont=Ricty-Bold]{Ricty}
-\setmainjfont[BoldFont=Ricty-Bold]{Ricty}
-\setsansjfont[BoldFont=Ricty-Bold]{Ricty}
-
-\usepackage[margin=15truemm]{geometry}
-
-\usepackage{titlesec}
-\titlespacing*{\section}{0\zw}{0.1\zh}{0.1\zh}
-\titlespacing*{\subsection}{1\zw}{0.1\zh}{0.1\zh}
-\titlespacing*{\subsubsection}{2\zw}{0.1\zh}{0.1\zh}
-
-\usepackage{graphicx}
-\setkeys{Gin}{width=\textwidth, height=\textheight, keepaspectratio}
-
-\setlength{\abovecaptionskip}{0truemm}
-
-\def\figureautorefname{図}
-\newcommand*{\fullref}[1]{\autoref{#1}: \nameref{#1}}
-
+\usepackage[hypcap=false]{caption}
 \usepackage[unicode=true]{hyperref}
 \hypersetup{%
   bookmarks=true,
@@ -37,32 +35,33 @@
   urlcolor=Blue,
 }
 
-\usepackage[usenames, dvipsnames, svgnames, table]{xcolor}
-\usepackage{lltjp-listings}
-\lstset{%
-  basicstyle=\ttfamily,
-  breakindent=0pt,
-  breaklines=true,
-  captionpos=b,
-  commentstyle=\color{Gray},
-  frame=shadowbox,
-  keywordstyle=\color{Blue},
-  numbers=left,
-  numberstyle=\color{Gray},
-  rulecolor=\color{Black},
-  showstringspaces=false,
-  stringstyle=\color{DarkGreen},
-  tabsize=4,
-}
+\usepackage{luatexja}
+\usepackage{luatexja-fontspec}
+\setmainfont{Ricty}
+\setmonofont{Ricty}
+\setsansfont{Ricty}
+\setmainjfont{Ricty}
+\setsansjfont{Ricty}
 
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{booktabs}
-\usepackage{indentfirst}
-\usepackage{longtable}
-\usepackage{sidecap}
-\usepackage{url}
-\usepackage{wrapfig}
+\usepackage[usenames, dvipsnames, svgnames, table]{xcolor}
+
+\usepackage[margin=15truemm]{geometry}
+
+\usepackage{graphicx}
+
+\setlength{\abovecaptionskip}{0truemm}
+
+\def\figureautorefname{図}
+\newcommand*{\fullref}[1]{\autoref{#1}: \nameref{#1}}
+
+\usepackage{titlesec}
+\titlespacing*{\section}{0\zw}{0.1\zh}{0.1\zh}
+\titlespacing*{\subsection}{1\zw}{0.1\zh}{0.1\zh}
+\titlespacing*{\subsubsection}{2\zw}{0.1\zh}{0.1\zh}
+
+\usepackage{minted}
+\usemintedstyle{emacs}
+\renewcommand\theFancyVerbLine{\large\arabic{FancyVerbLine}}
 
 \title{$title$}
 \author{$author$}

@@ -2,13 +2,23 @@
 
 pandoc\
     --from markdown\
+    --to latex\
     --table-of-contents\
     --filter=pandoc-autocomplete-caption\
     --filter=pandoc-include\
+    --filter=pandoc-minted\
     --latex-engine=lualatex\
-    --listings\
-    --no-tex-ligatures\
     --template=`dirname $0`/../share/pppset/luatex-style.sty\
     --variable='documentclass:ltjarticle'\
-    --output=${1:r}.pdf\
-    $@
+    --output=${1:r}.tex\
+    $@\
+    &&\
+    lualatex\
+        --shell-escape\
+        --draftmode\
+        ${1:r}.tex\
+    &&\
+    lualatex\
+        --shell-escape\
+        ${1:r}.tex\
+        ${1:r}.aux\
