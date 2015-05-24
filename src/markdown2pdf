@@ -15,11 +15,11 @@ pandoc\
     &&\
     lualatex\
         --draftmode\
-        --interaction=batchmode\
+        --interaction=nonstopmode\
         --shell-escape\
         ${1:r}.tex\
     &&\
     lualatex\
-        --interaction=batchmode\
+        --interaction=nonstopmode\
         --shell-escape\
         ${1:r}.tex ${1:r}.aux ${1:r}.out
