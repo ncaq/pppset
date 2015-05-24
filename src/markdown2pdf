@@ -20,5 +20,4 @@ pandoc\
     &&\
     lualatex\
         --shell-escape\
-        ${1:r}.tex\
-        ${1:r}.aux\
+        ${1:r}.tex ${1:r}.aux ${1:r}.out
