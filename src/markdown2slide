@@ -8,7 +8,7 @@ pandoc\
     --filter=pandoc-include\
     --filter=pandoc-minted\
     --latex-engine=lualatex\
-    --template=../share/pppset/luatex-style.sty\
+    --template=`dirname $0`/../share/pppset/luatex-style.sty\
     --variable='documentclass:ltj'\
     --output=${1:r}.tex\
     $@\
