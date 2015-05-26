@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/zsh -x
 
 pandoc\
     --from markdown\
@@ -8,8 +8,7 @@ pandoc\
     --filter=pandoc-include\
     --filter=pandoc-minted\
     --latex-engine=lualatex\
-    --template=`dirname $0`/../share/pppset/luatex-style.sty\
-    --variable='documentclass:ltj'\
+    --template=`dirname $0`/../share/pppset/beamer.sty\
     --output=${1:r}.tex\
     $@\
     &&\
@@ -22,4 +21,4 @@ pandoc\
     lualatex\
         --interaction=nonstopmode\
         --shell-escape\
-        ${1:r}.tex ${1:r}.aux ${1:r}.out
+        ${1:r}.tex ${1:r}.[^(log|md|pdf|tex)]*
