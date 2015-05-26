@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+pandoc\
+    --from markdown\
+    --to beamer\
+    --table-of-contents\
+    --filter=pandoc-autocomplete-caption\
+    --filter=pandoc-include\
+    --filter=pandoc-minted\
+    --latex-engine=lualatex\
+    --template=../share/pppset/luatex-style.sty\
+    --variable='documentclass:ltj'\
+    --output=${1:r}.tex\
+    $@\
+    &&\
+    lualatex\
+        --draftmode\
+        --interaction=nonstopmode\
+        --shell-escape\
+        ${1:r}.tex\
+    &&\
+    lualatex\
+        --interaction=nonstopmode\
+        --shell-escape\
+        ${1:r}.tex ${1:r}.aux ${1:r}.out
