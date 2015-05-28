@@ -4,6 +4,7 @@ pandoc\
     --from markdown\
     --to latex\
     --table-of-contents\
+    --filter=pandoc-fignos\
     --filter=pandoc-autocomplete-caption\
     --filter=pandoc-include\
     --filter=pandoc-minted\
