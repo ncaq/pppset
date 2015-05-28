@@ -4,10 +4,10 @@ pandoc\
     --from markdown\
     --to latex\
     --table-of-contents\
-    --filter=pandoc-fignos\
     --filter=pandoc-autocomplete-caption\
     --filter=pandoc-include\
     --filter=pandoc-minted\
+    --filter=pandoc-fignos\
     --latex-engine=lualatex\
     --template=`dirname $0`/../share/pppset/article.sty\
     --variable='documentclass:ltjarticle'\
