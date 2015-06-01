@@ -26,7 +26,8 @@
   urlcolor=Blue,
 }
 
-\AtBeginDocument{\renewcommand{\ref}[1]{\autoref{#1}: \nameref{#1}}}
+\newcommand*{\fullref}[1]{\autoref{#1}: \nameref{#1}}
+\AtBeginDocument{\renewcommand{\ref}[1]{\fullref{#1}}}
 
 \usepackage{luatexja}
 \usepackage{luatexja-fontspec}
