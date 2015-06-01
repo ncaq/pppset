@@ -38,6 +38,9 @@
   urlcolor=Blue,
 }
 
+\AtBeginDocument{\renewcommand{\ref}[1]{\autoref{#1}: \nameref{#1}}}
+\AtBeginDocument{\renewcommand{\href}[1]{\autoref{#1}: \nameref{#1}}}
+
 \usepackage{luatexja}
 \usepackage{luatexja-fontspec}
 \setmainfont{Ricty}
@@ -46,17 +49,11 @@
 \setmainjfont{Ricty}
 \setsansjfont{Ricty}
 
-\usepackage[margin=15truemm]{geometry}
-
 \usepackage{graphicx}
-
 \setlength{\abovecaptionskip}{0truemm}
-
 \def\figureautorefname{図}
 
-\AtBeginDocument{\renewcommand{\ref}[1]{\autoref{#1}: \nameref{#1}}}
-\AtBeginDocument{\renewcommand{\href}[1]{\autoref{#1}: \nameref{#1}}}
-
+\usepackage[margin=15truemm]{geometry}
 \usepackage{titlesec}
 \titlespacing*{\section}      {0\zw}{0.1\zh}{0.1\zh}
 \titlespacing*{\subsection}   {0\zw}{0.1\zh}{0.1\zh}
@@ -65,6 +62,10 @@
 \usepackage{minted}
 \usemintedstyle{emacs}
 \renewcommand\theFancyVerbLine{\large\arabic{FancyVerbLine}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
 
 \title{$title$}
 \author{$author$}
