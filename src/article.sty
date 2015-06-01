@@ -27,7 +27,6 @@
 }
 
 \AtBeginDocument{\renewcommand{\ref}[1]{\autoref{#1}: \nameref{#1}}}
-\AtBeginDocument{\renewcommand{\href}[1]{\autoref{#1}: \nameref{#1}}}
 
 \usepackage{luatexja}
 \usepackage{luatexja-fontspec}
@@ -49,7 +48,7 @@
 
 \usepackage{minted}
 \usemintedstyle{emacs}
-\renewcommand\theFancyVerbLine{\large\arabic{FancyVerbLine}}
+\renewcommand\theFancyVerbLine{\arabic{FancyVerbLine}}
 
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
