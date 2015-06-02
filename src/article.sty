@@ -9,6 +9,7 @@
 \usepackage{listing}
 \usepackage{longtable}
 \usepackage{sidecap}
+\usepackage{tocloft}
 \usepackage{ulem}
 \usepackage{url}
 
@@ -28,6 +29,14 @@
 
 \newcommand*{\fullref}[1]{\autoref{#1}: \nameref{#1}}
 \AtBeginDocument{\renewcommand{\ref}[1]{\fullref{#1}}}
+
+\newcommand{\listfootnotesname}{}
+\newlistof[chapter]{footnotes}{fnt}{\listfootnotesname}
+\let\oldfootnote\footnote
+\renewcommand\footnote[1]{\refstepcounter{footnotes}
+  \oldfootnote{#1}
+  \addcontentsline{fnt}{footnotes}{\protect\numberline{\thefootnotes}#1}
+}
 
 \usepackage{luatexja}
 \usepackage{luatexja-fontspec}
