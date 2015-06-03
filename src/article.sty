@@ -27,6 +27,9 @@
   urlcolor=Blue,
 }
 
+\setlength{\abovecaptionskip}{-5truemm}
+\setlength{\belowcaptionskip}{-5truemm}
+
 \newcommand*{\fullref}[1]{\autoref{#1}: \nameref{#1}}
 \AtBeginDocument{\renewcommand{\ref}[1]{\fullref{#1}}}
 
@@ -47,7 +50,6 @@
 \setsansjfont{Ricty}
 
 \usepackage{graphicx}
-\setlength{\abovecaptionskip}{0truemm}
 \def\figureautorefname{図}
 
 \usepackage[margin=15truemm]{geometry}
