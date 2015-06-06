@@ -30,6 +30,10 @@
 
 \setlength{\abovecaptionskip}{0truemm}
 \setlength{\belowcaptionskip}{0truemm}
+\captionsetup[listing]{%
+  aboveskip=0truemm,
+  belowskip=0truemm,
+}
 
 \newcommand*{\fullref}[1]{\autoref{#1}: \nameref{#1}}
 \AtBeginDocument{\renewcommand{\ref}[1]{\fullref{#1}}}
