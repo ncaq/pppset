@@ -1,5 +1,13 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$$else$a4paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
+\usepackage{luatexja}
+\usepackage{luatexja-fontspec}
+\setmainfont{Ricty}
+\setmonofont{Ricty}
+\setsansfont{Ricty}
+\setmainjfont{Ricty}
+\setsansjfont{Ricty}
+
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{booktabs}
@@ -11,6 +19,7 @@
 \usepackage{longtable}
 \usepackage{multicol}
 \usepackage{sidecap}
+\usepackage{titlesec}
 \usepackage{tocloft}
 \usepackage{ulem}
 \usepackage{url}
@@ -29,13 +38,6 @@
   urlcolor=Blue,
 }
 
-\setlength{\abovecaptionskip}{0truemm}
-\setlength{\belowcaptionskip}{0truemm}
-\captionsetup[listing]{%
-  aboveskip=-1.0\zh,
-  belowskip=0truemm,
-}
-
 \newcommand*{\fullref}[1]{\autoref{#1}: \nameref{#1}}
 \AtBeginDocument{\renewcommand{\ref}[1]{\fullref{#1}}}
 
@@ -47,23 +49,11 @@
   \addcontentsline{fnt}{footnotes}{\numberline{\thefootnotes}#1}
 }
 
-\usepackage{luatexja}
-\usepackage{luatexja-fontspec}
-\setmainfont{Ricty}
-\setmonofont{Ricty}
-\setsansfont{Ricty}
-\setmainjfont{Ricty}
-\setsansjfont{Ricty}
-
 \usepackage{graphicx}
 \setkeys{Gin}{width=\textwidth, height=\textheight, keepaspectratio}
 \def\figureautorefname{図}
 
 \usepackage[margin=12truemm]{geometry}
-\usepackage{titlesec}
-\titlespacing*{\section}      {0\zw}{0.1\zh}{0.1\zh}
-\titlespacing*{\subsection}   {0\zw}{0.1\zh}{0.1\zh}
-\titlespacing*{\subsubsection}{0\zw}{0.1\zh}{0.1\zh}
 
 \usepackage{minted}
 \usemintedstyle{emacs}
