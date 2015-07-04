@@ -1,22 +1,4 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$$else$a4paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$xcolor={svgnames},hyperref={unicode}]{$documentclass$}
-
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{booktabs}
-\usepackage{calc}
-\usepackage{etoolbox}
-\usepackage{fancyvrb}
-\usepackage{float}
-\usepackage{ifplatform}
-\usepackage{ifthen}
-\usepackage{indentfirst}
-\usepackage{keyval}
-\usepackage{kvoptions}
-\usepackage{lineno}
-\usepackage{listing}
-\usepackage{longtable}
-\usepackage{pdftexcmds}
-\usepackage{url}
+\documentclass[$fontsize$, $lang$, $papersize$, $for(classoption)$$classoption$$sep$, $endfor$xcolor={svgnames}, hyperref={unicode}]{$documentclass$}
 
 \usepackage{luatexja}
 \usepackage{luatexja-fontspec}
@@ -26,14 +8,35 @@
 \setmainjfont{Ricty}
 \setsansjfont{Ricty}
 
-\setkeys{Gin}{width=\textwidth}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{fancyvrb}
+\usepackage{float}
+\usepackage{indentfirst}
+\usepackage{lineno}
+\usepackage{listing}
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{sidecap}
+\usepackage{ulem}
+\usepackage{url}
 
-\def\figureautorefname{図}
+\usepackage[hypcap=false]{caption}
+
 \newcommand*{\fullref}[1]{\autoref{#1}: \nameref{#1}}
+\AtBeginDocument{\renewcommand{\ref}[1]{\fullref{#1}}}
+
+\usepackage{graphicx}
+\setkeys{Gin}{width=\textwidth, height=\textheight, keepaspectratio}
+\def\figureautorefname{図}
 
 \usepackage{minted}
 \usemintedstyle{emacs}
-\renewcommand\theFancyVerbLine{\large\arabic{FancyVerbLine}}
+\newcommand{\mintlang}{text}
+\renewcommand\theFancyVerbLine{\arabic{FancyVerbLine}}
+
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 \title{$title$}
 \author{$author$}
