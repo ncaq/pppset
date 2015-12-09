@@ -1,85 +1,14 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$$else$a4paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
-
 \usepackage{luatexja}
 \usepackage{luatexja-fontspec}
 \setmainfont{Ricty}
+\setmainjfont{Ricty}
 \setmonofont{Ricty}
 \setsansfont{Ricty}
-\setmainjfont{Ricty}
 \setsansjfont{Ricty}
-
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{booktabs}
-\usepackage{fancyvrb}
-\usepackage{float}
-\usepackage{indentfirst}
-\usepackage{lineno}
-\usepackage{listing}
-\usepackage{longtable}
-\usepackage{multicol}
-\usepackage{sidecap}
-\usepackage{titlesec}
-\usepackage{tocloft}
-\usepackage{ulem}
-\usepackage{url}
-
-\usepackage[usenames, dvipsnames, svgnames, table]{xcolor}
-\usepackage[hypcap=false]{caption}
-\usepackage[unicode=true]{hyperref}
-\hypersetup{%
-  breaklinks=true,
-  citecolor=Red,
-  colorlinks=true,
-  linkcolor=Blue,
-  pdfauthor={$author-meta$},
-  pdfborder={0 0 0},
-  pdftitle={$title-meta$},
-  urlcolor=Blue,
-}
-
-\newcommand*{\fullref}[1]{\autoref{#1}: \nameref{#1}}
-\AtBeginDocument{\renewcommand{\ref}[1]{\fullref{#1}}}
-
-\newcommand{\listfootnotesname}{}
-\newlistof[chapter]{footnotes}{fnt}{\listfootnotesname}
-\let\oldfootnote\footnote
-\renewcommand\footnote[1]{\refstepcounter{footnotes}
-  \oldfootnote{#1}
-  \addcontentsline{fnt}{footnotes}{\numberline{\thefootnotes}#1}
-}
-
-\usepackage{graphicx}
-\setkeys{Gin}{width=\textwidth, height=\textheight, keepaspectratio}
-\def\figureautorefname{図}
-
-\usepackage[margin=15truemm]{geometry}
 
 \usepackage{minted}
 \usemintedstyle{emacs}
 \newcommand{\mintlang}{text}
-\renewcommand\theFancyVerbLine{\arabic{FancyVerbLine}}
+\renewcommand{\theFancyVerbLine}{\arabic{FancyVerbLine}}
 
-\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\title{$title$}
-\author{$author$}
-\date{$date$}
-
-$for(header-includes)$
-$header-includes$
-$endfor$
-
-\begin{document}
-
-$for(include-before)$
-$include-before$
-$endfor$
-
-$body$
-
-$for(include-after)$
-$include-after$
-$endfor$
-
-\end{document}
+\usepackage{indentfirst}
