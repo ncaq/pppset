@@ -11,9 +11,10 @@ pandoc --from markdown\
        --filter=pandoc-include\
        --filter=pandoc-minted\
        --latex-engine=lualatex\
-       --include-in-header=`dirname $0`/../share/pppset/article.sty\
+       --template=`dirname $0`/../share/pppset/article.sty\
        --variable='documentclass:ltjarticle'\
-       --variable='geometry:margin=1cm'\
+       --variable='papersize:a4papar'\
+       --variable='geometry:margin=15truemm'\
        --output=${1:r}.tex\
        $1 &&
     lualatex\
