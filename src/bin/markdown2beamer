@@ -1,0 +1,27 @@
+#!/bin/zsh -x
+
+setopt EXTENDED_GLOB
+
+pandoc --from markdown\
+       --to beamer\
+       --listings\
+       --number-sections\
+       --filter=pandoc-autocomplete-caption\
+       --filter=pandoc-citeproc\
+       --filter=pandoc-fignos\
+       --filter=pandoc-include\
+       --filter=pandoc-minted\
+       --latex-engine=lualatex\
+       --template=`dirname $0`/../share/pppset/beamer.sty\
+       --output=${1:r}.tex\
+       $1 &&
+    lualatex\
+        --draftmode\
+        --interaction=nonstopmode\
+        --shell-escape\
+        ${1:r}.tex\
+    &&\
+    lualatex\
+        --interaction=nonstopmode\
+        --shell-escape\
+        ${1:r}.tex ${1:r}.^*(log|md|pdf|tex)*
