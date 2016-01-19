@@ -2,5 +2,6 @@ cmake_minimum_required (VERSION 2.8)
 
 project (pppset)
 
-install(PROGRAMS src/markdown2article DESTINATION bin)
-install(FILES src/article.sty DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY src/bin/ DESTINATION bin
+  FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+install(DIRECTORY src/share/ DESTINATION share/${PROJECT_NAME})
