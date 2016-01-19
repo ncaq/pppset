@@ -17,7 +17,7 @@ $endif$
 
 \usepackage[unicode=true]{hyperref}
 \usepackage[usenames,dvipsnames]{color}
-\hypersetup{ %
+\hypersetup{%
   breaklinks=true,
   bookmarks=true,
   pdfauthor={$author-meta$},
@@ -79,11 +79,8 @@ $include-before$
 
 $endfor$
 $if(toc)$
-{
-  \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
-  \setcounter{tocdepth}{$toc-depth$}
-  \tableofcontents
-}
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
 $endif$
 $if(lot)$
 \listoftables
