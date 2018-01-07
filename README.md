@@ -5,10 +5,11 @@
 # How to use
 
 ~~~
-cmake .
-make install
+install.sh
 ~~~
 
+install to `~/.local/bin/`
+
 ~~~
-markdown2pdf source.md
+markdown2article foo.md
 ~~~
