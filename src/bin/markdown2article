@@ -6,7 +6,7 @@ pandoc --from markdown\
        --to latex\
        --listings\
        --number-sections\
-       --latex-engine=lualatex\
+       --pdf-engine=lualatex\
        --template=`dirname $0`/../share/pppset/article.sty\
        --variable='documentclass:ltjarticle'\
        --variable='papersize:a4papar'\

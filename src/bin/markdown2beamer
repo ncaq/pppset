@@ -6,7 +6,7 @@ pandoc --from markdown\
        --to beamer\
        --listings\
        --number-sections\
-       --latex-engine=lualatex\
+       --pdf-engine=lualatex\
        --template=`dirname $0`/../share/pppset/beamer.sty\
        --output=${1:r}.tex\
        $1 &&
