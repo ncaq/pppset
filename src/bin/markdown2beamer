@@ -8,10 +8,12 @@ pandoc --from markdown\
        --number-sections\
        --pdf-engine=lualatex\
        --template=`dirname $0`/../share/pppset/beamer.sty\
-       --variable='fontfamily:luatexja-fontspec'\
+       --variable='luatexjapresetoptions'\
        --variable='mainfont:Ricty'\
        --variable='sansfont:Ricty'\
        --variable='monofont:Ricty'\
+       --variable='CJKmainfont:Ricty'\
+       --variable='colorlinks'\
        --output=${1:r}.tex\
        $1 &&
     lualatex\
