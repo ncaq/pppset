@@ -9,10 +9,10 @@ pandoc --from markdown\
        --pdf-engine=lualatex\
        --template=`dirname $0`/../share/pppset/beamer.sty\
        --variable='luatexjapresetoptions'\
-       --variable='mainfont:HackGenNerdConsole'\
-       --variable='sansfont:HackGenNerdConsole'\
-       --variable='monofont:HackGenNerdConsole'\
-       --variable='CJKmainfont:HackGenNerdConsole'\
+       --variable='mainfont:HackGen Console NFJ'\
+       --variable='sansfont:HackGen Console NFJ'\
+       --variable='monofont:HackGen Console NFJ'\
+       --variable='CJKmainfont:HackGen Console NFJ'\
        --variable='colorlinks'\
        --output=${1:r}.tex\
        $1 &&
