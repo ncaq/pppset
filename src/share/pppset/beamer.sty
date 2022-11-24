@@ -161,6 +161,8 @@ $if(listings)$
 $endif$
 $if(lhs)$
 \lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
+$else$
+\lstset{basicstyle=\scriptsize\ttfamily,frame=single}
 $endif$
 $if(highlighting-macros)$
 $highlighting-macros$
