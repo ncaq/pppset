@@ -163,7 +163,9 @@ $if(lhs)$
 \lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
 $else$
 \lstset{basicstyle=\tiny\ttfamily,frame=single}
-\def\inline{\lstinline[basicstyle=\ttfamily]}
+\makeatletter
+\lst@AddToHook{TextStyle}{\let\lst@basicstyle\ttfamily}
+\makeatother
 $endif$
 $if(highlighting-macros)$
 $highlighting-macros$
