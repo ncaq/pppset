@@ -11,10 +11,10 @@ pandoc\
   --pdf-engine=lualatex\
   --template=`dirname $0`/../share/pppset/beamer.sty\
   --variable='luatexjapresetoptions'\
-  --variable='mainfont:HackGen Console NFJ'\
-  --variable='sansfont:HackGen Console NFJ'\
-  --variable='monofont:HackGen Console NFJ'\
-  --variable='CJKmainfont:HackGen Console NFJ'\
+  --variable='mainfont:HackGen Console NF'\
+  --variable='sansfont:HackGen Console NF'\
+  --variable='monofont:HackGen Console NF'\
+  --variable='CJKmainfont:HackGen Console NF'\
   --variable='colorlinks'\
   --output=${1:r}.tex\
   $1
