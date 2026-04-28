@@ -16,7 +16,7 @@ pandoc \
   --pdf-engine=lualatex \
   --template="$script_dir/../share/pppset/article.sty" \
   --variable='documentclass:ltjarticle' \
-  --variable='papersize:a4papar' \
+  --variable='papersize:a4paper' \
   --variable='geometry:margin=15truemm' \
   --output="$stem.tex" \
   "$1"
