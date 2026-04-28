@@ -6,12 +6,19 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # `firge-nerd-font`はnixpkgs本体に存在しないため、
+    # 公式オーバーレイから取得します。
+    firge-nix = {
+      url = "github:ncaq/firge-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     inputs@{
       flake-parts,
       treefmt-nix,
+      firge-nix,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -29,6 +36,14 @@
           pkgs,
           ...
         }:
+        let
+          # `firge-nerd-font`を使えるようにオーバーレイを適用したpkgsを派生させます。
+          pkgsWithFirge = pkgs.extend firge-nix.overlays.default;
+
+          pppset = pkgs.callPackage ./nix/pppset.nix {
+            inherit (pkgsWithFirge) firge-nerd-font;
+          };
+        in
         {
           treefmt.config = {
             projectRootFile = "flake.nix";
@@ -57,6 +72,18 @@
             inherit (pkgs)
               nix-fast-build
               ;
+            default = pppset;
+          };
+
+          apps = {
+            markdown2article = {
+              program = pkgs.lib.getExe' pppset "markdown2article";
+              meta.description = "Convert Markdown into a PDF article via pandoc and lualatex";
+            };
+            markdown2beamer = {
+              program = pkgs.lib.getExe' pppset "markdown2beamer";
+              meta.description = "Convert Markdown into a PDF beamer slide deck via pandoc and lualatex";
+            };
           };
 
           devShells.default = pkgs.mkShell {

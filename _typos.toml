@@ -7,3 +7,5 @@ HSA = "HSA"
 Hashi = "Hashi"
 # Immediately Invoked Function Expression (IIFE)の略語。camelCase分割で"IIF"をtypoと判定する。
 IIF = "IIF"
+# OpenTypeフォントの"loca"テーブル(glyph location table)の名前。"local"のtypoではない。
+loca = "loca"
