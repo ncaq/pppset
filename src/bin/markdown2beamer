@@ -16,10 +16,10 @@ pandoc \
   --pdf-engine=lualatex \
   --template="$script_dir/../share/pppset/beamer.sty" \
   --variable='luatexjapresetoptions' \
-  --variable='mainfont:HackGen Console NF' \
-  --variable='sansfont:HackGen Console NF' \
-  --variable='monofont:HackGen Console NF' \
-  --variable='CJKmainfont:HackGen Console NF' \
+  --variable='mainfont:Fira Sans' \
+  --variable='sansfont:Fira Sans' \
+  --variable='monofont:FirgeNerd Console' \
+  --variable='CJKmainfont:BIZ UDGothic' \
   --variable='colorlinks' \
   --output="$stem.tex" \
   "$1"
