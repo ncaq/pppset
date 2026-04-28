@@ -7,7 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # `firge-nerd-font`はnixpkgs本体に存在しないため、
-    # 公式オーバーレイから取得します。
+    # オーバーレイから取得します。
     firge-nix = {
       url = "github:ncaq/firge-nix";
       inputs.nixpkgs.follows = "nixpkgs";
