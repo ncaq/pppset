@@ -1,28 +1,35 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
+set -euo pipefail
 
-set -eux
-setopt EXTENDED_GLOB
+set -x
 
-pandoc\
-  --from markdown\
-  --to latex\
-  --listings\
-  --number-sections\
-  --pdf-engine=lualatex\
-  --template=`dirname $0`/../share/pppset/article.sty\
-  --variable='documentclass:ltjarticle'\
-  --variable='papersize:a4papar'\
-  --variable='geometry:margin=15truemm'\
-  --output=${1:r}.tex\
-  $1
+shopt -s extglob nullglob
 
-lualatex\
-  --draftmode\
-  --interaction=nonstopmode\
-  --shell-escape\
-  ${1:r}.tex
+stem="${1%.*}"
+script_dir="$(dirname "$0")"
 
-lualatex\
-  --interaction=nonstopmode\
-  --shell-escape\
-  ${1:r}.tex ${1:r}.^*(log|md|pdf|tex)*
+pandoc \
+  --from markdown \
+  --to latex \
+  --listings \
+  --number-sections \
+  --pdf-engine=lualatex \
+  --template="$script_dir/../share/pppset/article.sty" \
+  --variable='documentclass:ltjarticle' \
+  --variable='papersize:a4paper' \
+  --variable='geometry:margin=15truemm' \
+  --output="$stem.tex" \
+  "$1"
+
+lualatex \
+  --draftmode \
+  --interaction=nonstopmode \
+  --shell-escape \
+  "$stem.tex"
+
+extras=("$stem".!(*log*|*md*|*pdf*|*tex*))
+
+lualatex \
+  --interaction=nonstopmode \
+  --shell-escape \
+  "$stem.tex" "${extras[@]}"

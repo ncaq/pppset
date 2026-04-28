@@ -2,14 +2,28 @@
 
 **p**andoc **p**df **p**age **p**ersonal **p**aranoia **p**rofile **p**reset
 
-# How to use
+## Usage
 
-```
-install.sh
+記事PDFを生成する場合。
+
+```zsh
+nix run 'github:ncaq/pppset#markdown2article' -- foo.md
 ```
 
-install to `~/.local/bin/`
+Beamerスライドを生成する場合。
 
+```zsh
+nix run 'github:ncaq/pppset#markdown2beamer' -- slides.md
 ```
-markdown2article foo.md
+
+引数のMarkdownファイルと同じディレクトリに、
+拡張子を`.pdf`に置き換えたファイルが出力されます。
+
+## Development
+
+ローカルにcloneしている場合は以下のように呼び出せます。
+
+```zsh
+nix run '.#markdown2article' -- foo.md
+nix run '.#markdown2beamer' -- slides.md
 ```
