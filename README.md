@@ -4,12 +4,12 @@
 
 # How to use
 
-~~~
+```
 install.sh
-~~~
+```
 
 install to `~/.local/bin/`
 
-~~~
+```
 markdown2article foo.md
-~~~
+```
