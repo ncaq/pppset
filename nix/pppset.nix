@@ -9,8 +9,8 @@
   biz-ud-gothic,
   fira,
   firge-nerd-font,
+  noto-fonts,
   noto-fonts-cjk-serif-static,
-  zilla-slab,
 }:
 let
   # 必要なTeX Liveコレクションを束ねます。
@@ -35,8 +35,8 @@ let
     biz-ud-gothic
     fira
     firge-nerd-font
+    noto-fonts
     noto-fonts-cjk-serif-static
-    zilla-slab
   ];
 
   # luaotfloadが参照する`OSFONTDIR`に単一ディレクトリで渡せるよう、複数フォントパッケージを統合します。
