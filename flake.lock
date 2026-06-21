@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780892047,
-        "narHash": "sha256-WeFOTwWr07sQBCUwPAuNGOhNusW1F8HXEQGvMolel1I=",
+        "lastModified": 1781475871,
+        "narHash": "sha256-pmu7059zt0r4X+ac8loTkhBHaqIwsY5uxoe0okgCeC0=",
         "owner": "ncaq",
         "repo": "firge-nix",
-        "rev": "70b6775c34f24c7bffe43109ff155f1791ca2f09",
+        "rev": "fa27f684a95e98d1f62069bf63a070dd55c9f14a",
         "type": "github"
       },
       "original": {
